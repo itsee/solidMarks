@@ -1,7 +1,13 @@
 # misc
 .idea
+.vscode/
 .DS_Store
 
+# node, npm, yarn ...
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+node_modules
+
+# project
+dist/
