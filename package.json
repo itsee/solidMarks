@@ -1,19 +1,23 @@
 {
   "name": "solid-marks",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": false,
   "description": "A Google Chrome extension that allows to synchronize bookmarks with SOLID Pods.",
-  "author": "Sebastien Dubois",
+  "author": "Sébastien Dubois",
   "license": "MIT",
   "scripts": {
     "test": "jest",
+    "clean": "npx rimraf ./.tmp ./dist",
+    "prebuild": "npm run clean",
     "build": "webpack --config webpack.dev.js",
+    "prewatch": "npm run clean",
     "watch": "webpack -w --config webpack.dev.js",
     "serve": "npm run watch",
-    "prebuild:prod": "npm run lint && npm run prettier-check",
+    "prebuild:prod": "npm run lint && npm run prettier-check && npm run clean",
     "build:prod": "webpack --config webpack.prod.js",
     "lint": "eslint src/**/*.{ts,tsx}",
-    "prettier-check": "prettier src/**/*.{css,html,js,json,md,pcss,scss,ts,yml} --write --html-whitespace-sensitivity strict"
+    "prettier-check": "prettier src/**/*.{css,html,js,json,md,pcss,scss,ts,yml} --write --html-whitespace-sensitivity strict",
+    "tsc": "tsc"
   },
   "devDependencies": {
     "@types/chrome": "0.0.81",
@@ -41,7 +45,10 @@
     "typescript": "3.2.4",
     "webpack": "4.29.5",
     "webpack-cli": "3.2.3",
-    "webpack-merge": "4.2.1"
+    "webpack-merge": "4.2.1",
+    "copy-webpack-plugin": "5.0.0",
+    "uglifyjs-webpack-plugin": "2.1.1",
+    "optimize-css-assets-webpack-plugin": "5.0.1"
   },
   "dependencies": {
     "react": "16.8.3",

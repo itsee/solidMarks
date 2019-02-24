@@ -1,12 +1,18 @@
-// Listen to messages sent from other parts of the extension.
 import MessageSender = chrome.runtime.MessageSender;
 
-chrome.runtime.onMessage.addListener((request, sender: MessageSender, sendResponse: Function) => {
+// Listen to messages sent from other parts of the extension.
+// content_script
+
+chrome.runtime.onMessage.addListener((message, sender: MessageSender, sendResponse: Function) => {
     // onMessage must return "true" if response is async.
     let isResponseAsync = false;
 
-    if (request.popupMounted) {
+    if (message.popupMounted) {
         console.debug("eventPage notified that Popup.tsx has mounted.");
+    }
+
+    if (message.optionsMounted) {
+        console.debug("eventPage notified that Options.tsx has mounted.");
     }
 
     console.debug("Sender:", sender);

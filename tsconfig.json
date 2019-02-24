@@ -4,12 +4,15 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "rootDir": "src",
-        "outDir": "dist/js",
+        "outDir": ".tmp",
         "sourceMap": true,
         "jsx": "react",
         "lib": ["es2015", "dom"],
         "strict": true,
         "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true
+        "emitDecoratorMetadata": true,
+        "allowSyntheticDefaultImports": true,
+        "noEmitOnError": true,
+        "removeComments": true
     }
 }

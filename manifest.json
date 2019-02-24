@@ -1,9 +1,0 @@
-{
-  "name": "solidMarks",
-  "version": "1.0",
-  "description": "Synchronize bookmarks with your Solid Pod",
-  "manifest_version": 2,
-  "permissions": [
-	"bookmarks"
-  ]
-}

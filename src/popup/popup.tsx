@@ -23,7 +23,7 @@ export default class Popup extends React.Component<PopupProps, PopupState> {
     public render(): ReactNode {
         return (
             <div className="popupContainer">
-                Hello, world!
+                Popup screen
             </div>
         )
     }
